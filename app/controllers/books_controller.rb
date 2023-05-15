@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :ensure_user, only: [:edit, :update, :destroy]
+  
   def new
     @book = Book.new
   end
@@ -45,7 +47,7 @@ class BooksController < ApplicationController
   def destroy
     book = Book.find(params[:id]) 
     book.destroy
-    redirect_to '/books'
+    redirect_to books_path
   end
   
   private
