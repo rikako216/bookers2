@@ -14,8 +14,8 @@
 
 <%= form_with model: @user do |f| %>
 <div class="form-group">
-  <label for="inputName">Name</label>
-  <input class="form-control name" type="text" name="user[name]" id="user_name" />
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class:"form-control introduction", autofocus: true %>
 </div>
   
 <div class="form-group">
@@ -24,8 +24,8 @@
 </div>
   
 <div class="form-group">
-  <label for="inputIntroduction">Introduction</label>
-  <textarea class="form-control introduction" name="user[introduction]" id="user_introduction"></textarea>
+    <%= f.label :introduction %><br />
+    <%= f.text_field :introduction, class:"form-control introduction", autofocus: true %>
 </div>
   
 <div class="form-group">

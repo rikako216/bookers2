@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
-  before_action :ensure_user, only: [:edit, :update]
-  
+
   def index
     @books = Book.all
     @book = Book.new
     @user = current_user
     @users = User.all
   end
-  
   
   def show
     @user = User.find(params[:id])
@@ -34,6 +32,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name,:introduction)
   end
-  
-  
+
 end
